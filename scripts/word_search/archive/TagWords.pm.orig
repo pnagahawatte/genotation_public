@@ -1,0 +1,199 @@
+#!/usr/bin/env perl
+
+package word_search::TagWords;
+use strict;
+use warnings;
+use Data::Dumper qw(Dumper);
+
+use Exporter qw(import);
+our @EXPORT_OK = qw();
+
+use Getopt::Long;
+#use DB_File;
+use Benchmark;
+## Set up the database handle using the
+## db connect library
+use SQL::CONN::db_connect;
+#use gneome_db::GneomeHashDB;
+
+my $start = new Benchmark;
+#@ISA = ('Exporter');
+#@EXPORT = ('db_connect');
+use word_search::word_index qw(generate get_word_hash print_text get_search_words add_tagged_word 
+	get_line print_word_index get_max_line set_doc_section get_doc_section get_test_all_words 
+	get_included_section modify_text_annotation id_to_line_number print_doc_sections 
+	get_tagged_words get_line_hash get_word_to_id_array id_to_line_characters set_word_hash);
+use word_search::GeneWords;
+use word_search::WordContext;
+use annotation::GeneDBAnnotation;
+
+## Fields of a document
+## Each section that has been set to true will be excluded / filtered out
+## from the document text
+#my ($abstract, $body, $references, $methods, $names, $in_reference_section, $annotate_pathway)
+#	= (0,0,0,0,0,0,0);
+my $text;
+my $add_to_buffer = 0;
+my $filtered_sections = "";
+my $LONGEST_WORD_THRESHOLD = 10;
+my $ANNOTATION_TYPE = "text"; ## html, xml, json
+## gene_words_to_annotate hash holds all the words that need to be annotated
+## Key: word ( gene / drug etc)
+## Value: List of word ids, where the word id refers to the id of the
+## document's word_index hash
+my (%gene_words_to_annotate, %common_words_to_add, %taxonomy);
+
+## Variables to be initialized in the constructor
+
+## Flags to denote any identified words
+my ($is_gene, $is_drug) = ("false" , "false");
+
+sub new
+{
+	## Gather the class name and the text file name to be parsed
+	my $class = shift;
+	my $text_filename = shift;
+	
+	## TODO: Gather annotation type
+	
+	## Compile the objects for analysis...
+	my ($word_index) = generate($text_filename);
+	my $documentContext = word_search::DocumentContext->new($word_index, get_line_hash, get_word_to_id_array);
+	$documentContext->getAcronyms;
+	my $geneAnnotation = annotation::GeneDBAnnotation->new();
+	my $geneWords = word_search::GeneWords->new($word_index, get_line_hash, get_word_to_id_array);
+	my $wordContext = word_search::WordContext->new($word_index);
+	my $commonWords = gneome_db::HashDB->new();
+	my ($searchWords) = get_search_words();
+	
+	## Genrate the class and return...
+	my $self = { _wordIndex =>  $word_index,
+				 _documentContext => $documentContext,
+				 _geneAnnotation => $geneAnnotation,
+				 _geneWords => $geneWords,
+				 _wordContext => $wordContext,
+				 _commonWords => $commonWords,
+				 _searchWords => $searchWords};
+	bless $self, $class;
+	return $self;
+}
+
+sub getAnnotations
+{
+	my $self = $_[0];
+	foreach(keys $self->{_searchWords})
+	{
+		my $search_word = $self->{_searchWords}{$_}->getSearchWord();
+		my $word_id = $_;
+		my $term_found = "false";
+		## HGNC gene naming criteria could be found here:
+		## http://www.genenames.org/guidelines.html#criteria
+		## Break apart word pairs such as BCR-ABL1
+		## Label
+		GENE_CHECK:
+		{
+			if ($search_word =~ /(^[a-zA-Z].{1,10}[-\/][a-zA-Z].{1,10})/ ) 
+			{ 
+				## For each word, check if it is a gene
+				my @fields = split /[-\/]/, $search_word;
+				foreach(@fields) 
+				{ 
+					my $tag = $self->{_geneWords}->tag($_, $word_id, $LONGEST_WORD_THRESHOLD);
+					## If the search word is not a gene nor a drug, add to common words list
+					## If the first word out of a few is not a gene, disregard the rest
+					if ($tag eq "none") 
+					{ 
+						## Add the common word
+						$self->add_common_word($_);
+					} 
+					elsif ($tag eq "drug") { $is_drug = "true"; $term_found = "true"; } 
+					## If neither of the above 2 conditions are not true, then it will be a 
+					## GeneMatch object being returned...
+					else 
+					{
+print STDERR "Type is: " . ref($tag) . "\n";
+						$term_found = "true";
+						$self->{_geneAnnotation}->addWordToAnnotate($_, $word_id);
+					} 
+					if( $term_found ne "true" )
+					{
+						print STDERR "word_search::tag_words\tdisregarded_word\t$search_word\t";
+						print STDERR "first_word_not_a_gene\t$_\n";
+						## Add the hyphenated - slash words to the common words list
+						$self->add_common_word($search_word);
+						## Break out of the loop
+						last GENE_CHECK;
+					}
+				}
+			}
+			## Non-paired words...
+			else
+			{
+				my $tag = $self->{_geneWords}->tag($search_word, $word_id, $LONGEST_WORD_THRESHOLD);
+				## If the search word is not a gene nor a drug, add to common words list
+				## If the first word out of a few is not a gene, disregard the rest
+				if ($tag eq "none") { $self->add_common_word($search_word);	} 
+				elsif ($tag eq "drug") { $is_drug = "true"; }
+				## If neither of the above 2 conditions are not true, then it will be a 
+				## GeneMatch object being returned...
+				else 
+				{ 
+print STDERR "Type is: " . ref($tag) . "\n";
+					$self->{_geneAnnotation}->addWordToAnnotate($search_word, $word_id);
+					## This is the point where gene symbols will be converted to gene ids
+					## and the annotation will be based on the gneomeIDs
+					my $taggedGneomeGeneIDs = $tag->getIDs();
+					if( defined $taggedGneomeGeneIDs) {	my @fields = split(",", $taggedGneomeGeneIDs); }
+				} 
+			}
+		}
+		## End - GENE_CHECK
+	}
+	## Get the hash of Gene objects that are identified as genes
+	my ($resultGenes) = $self->{_geneWords}->getResultGenes();
+	## Identify the major taxonomy id of the manuscript
+	$self->findMajorTaxonomy($resultGenes);
+	## Pass the hash reference to the GeneDBAnnotation module
+	$self->{_geneAnnotation}->setAnnotatedGenes($resultGenes);
+	my ($retHash) = $self->{_geneAnnotation}->annotateGenes();
+	return $retHash;
+}	
+
+## Contains the checks and insertion of a 
+## word into the common words table
+sub add_common_word
+{
+	my $self = $_[0];
+	my $word = $_[1];
+	$word =~ s/\s*//g;
+	## If there are "'" characters, only one character letters dismiss the word
+	if ( $word =~ /\'/ || $word =~ /[^A-Za-z]/ || length $word == 1 ) { return; }
+	## Only add words starting with a letter
+	if ( ($self->{_geneWords}->isNotCommonWord($word) eq "false") && ($word =~ /^[A-Za-z]/ ) ) 
+		## Add to the common words hash
+		{ $common_words_to_add{ $word } = $word; }
+}
+
+sub findMajorTaxonomy
+{
+	my $self = $_[0];
+	my $resultGenes = $_[1];
+	my %taxonomyIDs;
+	my $startCount = 1;
+	## Following finds the count of each taxonomy ids
+	## Find the taxonomy id of each result
+	## If the taxonomyID exists in the hash,
+	## increase the count. If not, add the 
+	## taxonomyID to the hash with a count of 1
+	foreach(keys %$resultGenes)
+	{
+		my $taxonomy = $resultGenes->{$_}->getTaxonomy();
+		if( exists $taxonomyIDs{$taxonomy} ) 
+		{ 
+			my $count = $taxonomyIDs{$taxonomy};
+			$taxonomyIDs{$taxonomy} = ($count+1);
+		}
+		else { $taxonomyIDs{$taxonomy} = $startCount; }
+	}
+}
+return "true";

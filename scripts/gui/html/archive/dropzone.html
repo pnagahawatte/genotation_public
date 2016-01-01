@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<title>HTML5 File Drag &amp; Drop API</title>
+<link rel="stylesheet" type="text/css" media="all" href="res/dropzone.css" />
+<link rel="stylesheet" type="text/css" media="all" href="res/.css" />
+<script src="res/dropzone.js"></script>
+<script type="text/javascript">
+   Dropzone.options.dropzone = {
+		maxFiles: 1,
+		autoProcessQueue: false,
+		uploadMultiplle: false,
+		parallelUploads: 100,
+		init: function() {
+		var submitButton = document.querySelector("#submit-file")
+			myDropzone = this; // closure
+
+			submitButton.addEventListener("click", function() {
+				//myDropzone.processQueue(); // Tell Dropzone to process all queued files.
+				//e.preventDefault();
+				//e.stopPropagation();
+				myDropzone.processQueue();
+			});
+			this.on("addedfile", function() {
+		  // Show submit button here and/or inform user to click it.
+				document.getElementById("submit-file").className = "show submitButton";
+				//document.getElementById("submit-file").style.display = "block";
+			});
+			this.on("sending", function() {
+			  // Gets triggered when the form is actually being sent.
+			  // Hide the success button or the complete form.
+			});
+			this.on("success", function(file, response) {
+			  // Gets triggered when the files have successfully been sent.
+			  // Redirect user or notify of success.
+			  var path = "DisplayAnnotation.pl?fileurl=";
+			  var url = path.concat(file.name);
+			  window.location = url;
+			});
+			this.on("error", function(file, response) {
+			  // Gets triggered when there was an error sending the files.
+			  // Maybe show form again, and notify user of error
+			});
+		},
+        accept: function(file, done) {
+            console.log(file);
+            if (file.type != "application/pdf") {
+                done("Error! Files of this type are not accepted");
+            }
+            else { done(); }
+        }
+    };
+ </script>
+
+</head>
+
+<body>
+<form action="file-upload.php" class="dropzone dz-clickable" id="dropzone">
+	<div class="dz-default dz-message">
+		drop files here to upload
+		
+	</div>
+	
+</form>
+<input type="file" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
+<button id="submit-file" style="Display:none" class="hide submitButton">AnnotateFile</button>
+</body>
+</html>

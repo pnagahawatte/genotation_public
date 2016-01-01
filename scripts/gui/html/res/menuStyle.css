@@ -1,0 +1,256 @@
+.horizontalMenuItem
+{
+	display:inline;
+}
+
+.menuHeader {
+    width: 6em;
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+    padding: 0.2em 0.6em;
+    border-right: 1px solid white;
+}
+
+.btn { 
+    /*position: relative;*/
+	float:right;
+    margin-top:0px; 
+    border: 2px solid white;
+    border-radius: 2px; 
+    height: 36px; 
+    width:36px;  
+}
+#lines:before { 
+    border-bottom: 17px double white;
+    border-top: 6px solid white;    
+    content:"";
+    height: 5px; 
+    position: absolute; 
+    right:3px;  
+    top: 4px; 
+    width:30px; 
+}
+
+/* Start menu header */
+.tabList
+{
+	list-style:none;
+	height:20px;
+	padding:0; 
+    margin:0; 
+    border: none;
+}
+
+.tabList li
+{
+	float:left;
+	margin-right:1px;
+}
+
+.tabList li a
+{
+    display:block;
+    padding:0 1em;
+    text-decoration:none;
+    border:0.06em solid white;
+    border-bottom:0;
+    font:bold 0.88em/2em arial,geneva,helvetica,sans-serif;
+    color:white;
+    background-color:#6F71BD;
+
+    /* CSS 3 elements */
+    webkit-border-top-right-radius:0.50em;
+    -webkit-border-top-left-radius:0.50em;
+    -moz-border-radius-topright:0.50em;
+    -moz-border-radius-topleft:0.50em;
+    border-top-right-radius:0.50em;
+    border-top-left-radius:0.50em;
+}
+
+.tabList li a:hover
+{
+    background:#3cf; 
+    color:#fff;
+    text-decoration:none;
+}
+
+.tabList li#current a {
+    background-color: #EB1B10;
+    color: #fff;
+}
+
+.tabList li#current a:hover {
+    background: #39C;
+}
+/* End menu header */
+
+
+.annotationContainer
+{
+	display:block;
+    border:0.1em solid white;
+	width:auto;
+	height:auto;
+	margin-top:5px;
+}
+
+/* Start menu-item expansion */
+.catMenu {
+	display:block;
+	border:0.1em solid white;
+	width:auto;
+	padding:2px;
+	margin:0px;
+	list-style-type:none;
+}
+
+a.catMenu {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	margin-left:0px;
+	padding-left:5px;
+	padding-top:1px;
+	padding-bottom: 1px;
+	display:block;
+	text-decoration: none;
+	color: #FFFFFF;
+	height: 18px;
+}
+
+a.catMenu:hover {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;
+	margin-left:5px;
+	padding-left:5px;
+	padding-top:1px;
+	padding-bottom: 1px;
+	display:block;
+	text-decoration: none;
+	color: #CC5709;
+	height: 18px;
+}
+
+.catSubmenu{
+	display: block;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;
+	height: auto;
+	margin-left: 5px;
+	padding-top: 2px;
+	padding-left: 0px;
+	color: #333333;
+	text-decoration: none;
+}
+
+.detailSubmenu{
+	display: block;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;
+	height: auto;
+	margin-left: 5px;
+	padding-top: 2px;
+	padding-left: 0px;
+	color: white;
+	text-decoration: none;
+	background: gray;
+}
+
+.hide{
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+.apex-dn {
+    width:0px;
+    height:0px;
+    border-left:12px solid transparent;
+    border-right:12px solid transparent;
+    border-top:12px solid #fff;
+	float:right;
+	margin:2px;
+}
+/* End menu-item expansion */
+
+/* Start menu-item detail*/
+.annotationTextbox
+{
+    background: white; 
+    border: 1px double #47a3da; 
+    color: blue; 
+    outline: blue solid 1px; 
+    height:auto; 
+    width: auto; 
+	padding-top:1px;
+	padding-bottom:1px;
+	margin:1px;
+}
+
+.annotationLink
+{
+}
+
+.annotationText
+{
+	margin:0px 0px 0px 10px;
+	color:white;
+	text-decoration:none;
+	display:block;
+	background:gray;
+}
+
+.annotationLineItem
+{
+}
+
+.annotationExpansion
+ {
+	display:block;
+	border:0.1em solid white;
+	width:auto;
+	padding:0px;
+	margin:0px 0px 0px 10px;
+	list-style-type:none;
+	text-decoration:none;
+	color:white;
+}
+
+.annotationExpansionLink
+ {
+	display:block;
+	width:auto;
+	list-style-type:none;
+	color:white;
+	margin:0px 0px 0px 10px;
+}
+
+.annotationSeperator
+{
+	width:auto;
+	height:1px;
+	background-color:#696969;
+	margin	:1px;
+}/* End menu-item detail*/
+
+.largeParagraphtext
+{
+	display:block;
+	text-decoration:none;
+	background: white; 
+    border: 1px double #47a3da; 
+    outline: black solid 1px; 
+    height:auto; 
+    width: auto; 
+	padding-top:1px;
+	padding-bottom:1px;
+	margin:1px;	
+}
+
+.largeParagraphtext p
+{
+	color: black; 
+    text-decoration:none;
+}

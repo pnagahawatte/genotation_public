@@ -1,0 +1,717 @@
+LOCUS       NM_016326                633 bp    mRNA    linear   PRI 03-FEB-2011
+DEFINITION  Homo sapiens chemokine-like factor (CKLF), transcript variant 3,
+            mRNA.
+ACCESSION   NM_016326
+VERSION     NM_016326.3  GI:321267553
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 633)
+  AUTHORS   Davila,S., Froeling,F.E., Tan,A., Bonnard,C., Boland,G.J.,
+            Snippe,H., Hibberd,M.L. and Seielstad,M.
+  TITLE     New genetic associations detected in a host response study to
+            hepatitis B vaccine
+  JOURNAL   Genes Immun. 11 (3), 232-238 (2010)
+   PUBMED   20237496
+  REMARK    GeneRIF: Observational study of gene-disease association. (HuGE
+            Navigator)
+REFERENCE   2  (bases 1 to 633)
+  AUTHORS   Shao,L., Li,T., Mo,X., Majdic,O., Zhang,Y., Seyerl,M., Schrauf,C.,
+            Ma,D., Stockl,J. and Han,W.
+  TITLE     Expressional and functional studies of CKLF1 during dendritic cell
+            maturation
+  JOURNAL   Cell. Immunol. 263 (2), 188-195 (2010)
+   PUBMED   20392439
+  REMARK    GeneRIF: CKLF1-C19 and -C27 can stimulate antigen-presenting
+            capability of dendritic cells
+REFERENCE   3  (bases 1 to 633)
+  AUTHORS   Chowdhury,M.H., Nagai,A., Terashima,M., Sheikh,A., Murakawa,Y.,
+            Kobayashi,S. and Yamaguchi,S.
+  TITLE     Chemokine-like factor expression in the idiopathic inflammatory
+            myopathies
+  JOURNAL   Acta Neurol. Scand. 118 (2), 106-114 (2008)
+   PUBMED   18294340
+  REMARK    GeneRIF: Chemokine-like factor expression is differentially
+            regulated in myoblasts and myotubes and thrombin could be a strong
+            regulator for its expression
+REFERENCE   4  (bases 1 to 633)
+  AUTHORS   Wang,Y., Zhang,Y., Han,W., Li,D., Tian,L., Yin,C. and Ma,D.
+  TITLE     Two C-terminal peptides of human CKLF1 interact with the chemokine
+            receptor CCR4
+  JOURNAL   Int. J. Biochem. Cell Biol. 40 (5), 909-919 (2008)
+   PUBMED   18069042
+  REMARK    GeneRIF: Results confirm that the secreted peptides of CKLF1, C27
+            and C19, have functional activation via CCR4.
+REFERENCE   5  (bases 1 to 633)
+  AUTHORS   Xu,M., Han,W., Qian,M., Ma,X., Ding,P., Wang,Y., Xia,D., Rui,M.,
+            Wang,L., Zhang,Y. and Ma,D.
+  TITLE     Last intron of the chemokine-like factor gene contains a putative
+            promoter for the downstream CKLF super family member 1 gene
+  JOURNAL   Biochem. Biophys. Res. Commun. 313 (1), 135-141 (2004)
+   PUBMED   14672709
+REFERENCE   6  (bases 1 to 633)
+  AUTHORS   Xia,D., Li,X., Lou,Y., Han,W., Ding,P., Zhang,Y., Di,C., Song,Q.
+            and Ma,D.
+  TITLE     Overexpression of chemokine-like factor 2 promotes the
+            proliferation and survival of C2C12 skeletal muscle cells
+  JOURNAL   Biochim. Biophys. Acta 1591 (1-3), 163-173 (2002)
+   PUBMED   12183067
+REFERENCE   7  (bases 1 to 633)
+  AUTHORS   Ke,X., Jia,L., Jing,H., Liu,Y., Zhang,Y. and Di,C.
+  TITLE     Effects of novel human chemokine-like factor 1 (CKLF1) on bone
+            marrow hematopoietic stem cell/progenitor cell in vitro
+  JOURNAL   Zhonghua Xue Ye Xue Za Zhi 23 (6), 301-303 (2002)
+   PUBMED   12411060
+  REMARK    GeneRIF: CKLF1 could increase the proliferation of human bone
+            marrow hematopoietic progenitor cells and colony formation
+REFERENCE   8  (bases 1 to 633)
+  AUTHORS   Han,W., Lou,Y., Tang,J., Zhang,Y., Chen,Y., Li,Y., Gu,W., Huang,J.,
+            Gui,L., Tang,Y., Li,F., Song,Q., Di,C., Wang,L., Shi,Q., Sun,R.,
+            Xia,D., Rui,M., Tang,J. and Ma,D.
+  TITLE     Molecular cloning and characterization of chemokine-like factor 1
+            (CKLF1), a novel human cytokine with unique structure and potential
+            chemotactic activity
+  JOURNAL   Biochem. J. 357 (PT 1), 127-135 (2001)
+   PUBMED   11415443
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from DA113473.1, AF135381.2 and
+            BU189908.1.
+            On Feb 3, 2011 this sequence version replaced gi:10092611.
+            
+            Summary: The product of this gene is a cytokine. Cytokines are
+            small proteins that have an essential role in the immune and
+            inflammatory responses. This gene is one of several chemokine-like
+            factor genes located in a cluster on chromosome 16. The protein
+            encoded by this gene is a potent chemoattractant for neutrophils,
+            monocytes and lymphocytes. It also can stimulate the proliferation
+            of skeletal muscle cells. This protein may play important roles in
+            inflammation and in the regeneration of skeletal muscle.
+            Alternatively spliced transcript variants encoding different
+            isoforms have been identified. Naturally occurring read-through
+            transcription occurs between this locus and the neighboring locus
+            CMTM1 (CKLF-like MARVEL transmembrane domain containing 1).
+            
+            Transcript Variant: This variant (3) lacks an in-frame segment of
+            the coding region, compared to variant 1. It encodes a shorter
+            isoform (c), also known as an isoform CKL3, that is missing an
+            internal segment compared to isoform a.
+            COMPLETENESS: complete on the 3' end.
+            1-6                 DA113473.1         1-6
+            7-414               AF135381.2         1-408
+            415-633             BU189908.1         471-689
+FEATURES             Location/Qualifiers
+     source          1..633
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="16"
+                     /map="16q21"
+     gene            1..633
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /note="chemokine-like factor"
+                     /db_xref="GeneID:51192"
+                     /db_xref="HGNC:13253"
+                     /db_xref="HPRD:16718"
+     exon            1..231
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=1
+     variation       144
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="g"
+                     /replace="t"
+                     /db_xref="dbSNP:2232724"
+     CDS             154..357
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /note="isoform c is encoded by transcript variant 3;
+                     transmembrane proteolipid; chemokine-like factor 1;
+                     chemokine-like factor 2; chemokine-like factor 3;
+                     chemokine-like factor 4"
+                     /codon_start=1
+                     /product="chemokine-like factor isoform c"
+                     /protein_id="NP_057410.1"
+                     /db_xref="GI:7705933"
+                     /db_xref="CCDS:CCDS10806.1"
+                     /db_xref="GeneID:51192"
+                     /db_xref="HGNC:13253"
+                     /db_xref="HPRD:16718"
+                     /translation="MDNVQPKIKHRPFCFSVKGHVKMLRLVFALVTAVCCLADGALIY
+                     RKLLFNPSGPYQKKPVHEKKEVL"
+     variation       166
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="a"
+                     /replace="c"
+                     /db_xref="dbSNP:142839030"
+     variation       193
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="a"
+                     /replace="t"
+                     /db_xref="dbSNP:150645315"
+     exon            232..633
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=4a
+     variation       234
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:16956732"
+     variation       273
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:144099542"
+     STS             274..350
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /standard_name="SHGC-36487"
+                     /db_xref="UniSTS:10847"
+     variation       complement(289)
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:14835"
+     variation       333
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:2232729"
+     variation       358
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:144564764"
+     polyA_signal    389..394
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+     variation       405
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:16956739"
+     polyA_site      418
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+     variation       549
+                     /gene="CKLF"
+                     /gene_synonym="C32; CKLF1; CKLF2; CKLF3; CKLF4; HSPC224;
+                     UCK-1"
+                     /replace="g"
+                     /replace="t"
+                     /db_xref="dbSNP:181161636"
+ORIGIN      
+        1 atgcgcgcaa gagagcggga agccgagctg ggcgagaagt aggggagggc ggtgctccgc
+       61 cgcggtggcg gttgctatcg cttcgcagaa cctactcagg cagccagctg agaagagttg
+      121 agggaaagtg ctgctgctgg gtctgcagac gcgatggata acgtgcagcc gaaaataaaa
+      181 catcgcccct tctgcttcag tgtgaaaggc cacgtgaaga tgctgcggct ggtgtttgca
+      241 cttgtgacag cagtatgctg tcttgccgac ggggccctta tttaccggaa gcttctgttc
+      301 aatcccagcg gtccttacca gaaaaagcct gtgcatgaaa aaaaagaagt tttgtaattt
+      361 tatattactt tttagtttga tactaagtat taaacatatt tctgtattct tccacatatt
+      421 ttctgcagtt attttaactc agtataggag ctagaggaag agatttccga agtctgcacc
+      481 ccgcgcagag cactactgta acttccaagg gagcgctggg agcagcggga tcgggttttc
+      541 cggcacccgg gcctgggtgg cagggaagaa tgtgccggga tccgcctcag ggatctttga
+      601 atctctttac tgcctggctg gccggcagct ccg
+//
+LOCUS       NM_005553               1188 bp    mRNA    linear   PRI 11-NOV-2012
+DEFINITION  Homo sapiens keratin associated protein 5-9 (KRTAP5-9), mRNA.
+ACCESSION   NM_005553
+VERSION     NM_005553.3  GI:123702037
+KEYWORDS    RefSeq.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 1188)
+  AUTHORS   Lamesch,P., Li,N., Milstein,S., Fan,C., Hao,T., Szabo,G., Hu,Z.,
+            Venkatesan,K., Bethel,G., Martin,P., Rogers,J., Lawlor,S.,
+            McLaren,S., Dricot,A., Borick,H., Cusick,M.E., Vandenhaute,J.,
+            Dunham,I., Hill,D.E. and Vidal,M.
+  TITLE     hORFeome v3.1: a resource of human open reading frames representing
+            over 10,000 human genes
+  JOURNAL   Genomics 89 (3), 307-315 (2007)
+   PUBMED   17207965
+REFERENCE   2  (bases 1 to 1188)
+  AUTHORS   Yahagi,S., Shibuya,K., Obayashi,I., Masaki,H., Kurata,Y., Kudoh,J.
+            and Shimizu,N.
+  TITLE     Identification of two novel clusters of ultrahigh-sulfur
+            keratin-associated protein genes on human chromosome 11
+  JOURNAL   Biochem. Biophys. Res. Commun. 318 (3), 655-664 (2004)
+   PUBMED   15144888
+REFERENCE   3  (bases 1 to 1188)
+  AUTHORS   Perez,C., Auriol,J., Gerst,C., Bernard,B.A. and Egly,J.M.
+  TITLE     Genomic organization and promoter characterization of two human UHS
+            keratin genes
+  JOURNAL   Gene 227 (2), 137-148 (1999)
+   PUBMED   10023043
+REFERENCE   4  (bases 1 to 1188)
+  AUTHORS   MacKinnon,P.J., Powell,B.C., Rogers,G.E., Baker,E.G.,
+            MacKinnon,R.N., Hyland,V.J., Callen,D.F. and Sutherland,G.R.
+  TITLE     An ultrahigh-sulphur keratin gene of the human hair cuticle is
+            located at 11q13 and cross-hybridizes with sequences at 11p15
+  JOURNAL   Mamm. Genome 1 (1), 53-56 (1991)
+   PUBMED   1724400
+REFERENCE   5  (bases 1 to 1188)
+  AUTHORS   MacKinnon,P.J., Powell,B.C. and Rogers,G.E.
+  TITLE     Structure and expression of genes for a class of cysteine-rich
+            proteins of the cuticle layers of differentiating wool and hair
+            follicles
+  JOURNAL   J. Cell Biol. 111 (6 PT 1), 2587-2600 (1990)
+   PUBMED   1703541
+COMMENT     VALIDATED REFSEQ: This record has undergone validation or
+            preliminary review. The reference sequence was derived from
+            AP000867.5, AB126078.1 and DB339866.1.
+            On Jan 20, 2007 this sequence version replaced gi:40254818.
+            1-204               AP000867.5         76317-76520
+            205-1134            AB126078.1         1-930
+            1135-1188           DB339866.1         1-54                c
+FEATURES             Location/Qualifiers
+     source          1..1188
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="11"
+                     /map="11q13.5"
+     gene            1..1188
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /note="keratin associated protein 5-9"
+                     /db_xref="GeneID:3846"
+                     /db_xref="HGNC:23604"
+                     /db_xref="MIM:148021"
+     exon            1..1188
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /inference="alignment:Splign:1.39.8"
+     variation       37
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:760420"
+     variation       complement(63)
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:149916781"
+     variation       71
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="t"
+                     /db_xref="dbSNP:190769804"
+     variation       95
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:117909539"
+     STS             97..830
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /db_xref="UniSTS:483250"
+     variation       117
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="g"
+                     /replace="t"
+                     /db_xref="dbSNP:371557159"
+     variation       192
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:143860148"
+     variation       203
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:148620622"
+     variation       215
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:372666324"
+     CDS             239..748
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /note="keratin, cuticle, ultrahigh sulphur 1; UHS KerA;
+                     UHS keratin A; keratin-associated protein 5.9; keratin,
+                     cuticle, ultrahigh sulfur 1; keratin, ultra high-sulfur
+                     matrix protein A; ultrahigh sulfur keratin-associated
+                     protein 5.9"
+                     /codon_start=1
+                     /product="keratin-associated protein 5-9"
+                     /protein_id="NP_005544.4"
+                     /db_xref="GI:123702038"
+                     /db_xref="CCDS:CCDS53677.1"
+                     /db_xref="GeneID:3846"
+                     /db_xref="HGNC:23604"
+                     /db_xref="MIM:148021"
+                     /translation="MGCCGCSGGCGSSCGGCDSSCGSCGSGCRGCGPSCCAPVYCCKP
+                     VCCCVPACSCSSCGKRGCGSCGGSKGGCGSCGCSQCSCCKPCCCSSGCGSSCCQCSCC
+                     KPYCSQCSCCKPCCSSSGRGSSCCQSSCCKPCCSSSGCGSSCCQSSCCKPCCSQSRCC
+                     VPVCYQCKI"
+     misc_feature    341..724
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P26371.1);
+                     Region: 8 X 4 AA repeats of C-C-X-P"
+     STS             239..748
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /db_xref="UniSTS:481756"
+     variation       244
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:180808688"
+     variation       260
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:34213141"
+     variation       287..288
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="g"
+                     /replace="t"
+                     /db_xref="dbSNP:78697504"
+     variation       293
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:372093334"
+     variation       312
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:376944910"
+     variation       323
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:114947572"
+     variation       335
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:373649192"
+     variation       347
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:185257151"
+     variation       348
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:375818152"
+     variation       350
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="g"
+                     /db_xref="dbSNP:369936376"
+     variation       351
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:12791610"
+     variation       353
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:146869772"
+     variation       357
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:10792769"
+     variation       371
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:373099716"
+     variation       376
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:189729045"
+     variation       389..390
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace=""
+                     /replace="cct"
+                     /db_xref="dbSNP:373000485"
+     variation       390..391
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace=""
+                     /replace="cct"
+                     /db_xref="dbSNP:368990580"
+     variation       417
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:182395012"
+     variation       438
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:200807487"
+     STS             459..970
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /standard_name="GDB:197848"
+                     /db_xref="UniSTS:155965"
+     variation       470..471
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace=""
+                     /replace="c"
+                     /db_xref="dbSNP:36051072"
+     variation       498
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:186626363"
+     variation       509
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace=""
+                     /replace="g"
+                     /db_xref="dbSNP:35547146"
+     variation       522
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="g"
+                     /db_xref="dbSNP:114705722"
+     variation       526
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="g"
+                     /db_xref="dbSNP:200091258"
+     variation       532
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="g"
+                     /replace="t"
+                     /db_xref="dbSNP:61746411"
+     variation       534
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="g"
+                     /db_xref="dbSNP:202236982"
+     variation       552
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:200171268"
+     variation       565
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="c"
+                     /db_xref="dbSNP:200956303"
+     variation       569
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="t"
+                     /db_xref="dbSNP:202087444"
+     variation       580
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="c"
+                     /db_xref="dbSNP:371997244"
+     variation       582
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="g"
+                     /replace="t"
+                     /db_xref="dbSNP:117137984"
+     variation       590
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="t"
+                     /db_xref="dbSNP:367545102"
+     variation       595
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:372250247"
+     variation       600
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:201275630"
+     variation       619
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:369827874"
+     variation       666
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:373209436"
+     variation       700
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:61733899"
+     STS             749..941
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /standard_name="RH18107"
+                     /db_xref="UniSTS:53288"
+     STS             750..1024
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /standard_name="SHGC-12671"
+                     /db_xref="UniSTS:50001"
+     STS             755..983
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /standard_name="KRN1"
+                     /db_xref="UniSTS:16538"
+     variation       778
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:2664"
+     STS             782..983
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /standard_name="G59550"
+                     /db_xref="UniSTS:136712"
+     variation       788
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="t"
+                     /db_xref="dbSNP:4245"
+     variation       820
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:191475060"
+     variation       831
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:2663"
+     variation       859
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="g"
+                     /db_xref="dbSNP:113483326"
+     variation       883
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="t"
+                     /db_xref="dbSNP:2665"
+     variation       complement(903)
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="c"
+                     /replace="g"
+                     /db_xref="dbSNP:74818399"
+     variation       1098
+                     /gene="KRTAP5-9"
+                     /gene_synonym="KRN1; KRTAP5-1; KRTAP5.9"
+                     /replace="a"
+                     /replace="t"
+                     /db_xref="dbSNP:183790886"
+ORIGIN      
+        1 gaattccaca aggaaatcat ctcaggagga agggctcata cttggatcca gaaaatatca
+       61 acatagccaa agaaaaacaa tcaagacata cctccaggag ctgtgtaaca gcaaccggaa
+      121 agagaaacaa tggtgtgttc ctatgtggga tataaagagc cggggctcag ggggctccac
+      181 acctgcacct ccttctcacc tgctcctcta cctgctccac cctcaatcca ccagaaccat
+      241 gggctgctgt ggctgctccg gaggctgtgg ctccagctgt ggaggctgtg actccagctg
+      301 tgggagctgt ggctctggct gcaggggctg tggccccagc tgctgtgcac ccgtctactg
+      361 ctgcaagccc gtgtgctgct gtgttccagc ctgttcctgc tctagctgtg gcaagcgggg
+      421 ctgtggctcc tgtgggggct ccaagggagg ctgtggttct tgtggctgct cccagtgcag
+      481 ttgctgcaag ccctgctgtt gctcttcagg ctgtgggtca tcctgctgcc agtgcagctg
+      541 ctgcaagccc tactgctccc agtgcagctg ctgtaagccc tgttgctcct cctcgggtcg
+      601 tgggtcatcc tgctgccaat ccagctgctg caagccctgc tgctcatcct caggctgtgg
+      661 gtcatcctgc tgccagtcca gctgctgcaa gccctgctgc tcccagtcca gatgctgtgt
+      721 ccctgtgtgc taccagtgca agatctgagg ctctagtggg aaacctcagg tagctcctga
+      781 agatctgtgc tttccaacaa gtgactaccc ttgaagcaca tccccttctg gatctgaaaa
+      841 gagcccttgg ctcagggcgt ctttttccag cccctgagga aatggaatga accactccct
+      901 gcccattccc tataagaata tcccaagacc caggcaattt tgcccctctt tcccacatgc
+      961 ccccatatgt ctgagccaaa ctgcactggg ggctgccctc atgccaagca agagcctgga
+     1021 attccccttc ttgataattc catgggagac agcaaaccct tctttccttt gcctgccagg
+     1081 agcttcacga catttgcaga tggatgtcct gcaacccaaa tgatcacatg tatctatgga
+     1141 aatccaaaat gcatctgggt gcagcactaa ataaattctc catccctc
+//

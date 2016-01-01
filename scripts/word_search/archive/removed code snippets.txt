@@ -1,0 +1,202 @@
+from: DisplayAnnotation.pl
+		#for ( <DATA> ) {
+		#skip blank lines
+		#next if /^$/;
+		#($key, $value) = split /\s*,\s*/;
+		#$hyperlink{$key} = $value;
+		#Once you've printed the header,
+		#you can print diagnostics to the browser window!
+		#print "$key, $value<br>\n";
+
+		#}
+from: GeneWords.pm
+		## Replace common occuring text to make the lookups more efficient
+		#$search_word =~ s/\bin\b|\b[aA]\b|\bis\b|\b[Tt]he\b|\b[Gg]ene?\b|\b[Hh]uman*\b|\bDNA\b|\bRNA\b|\bfor\b|isoform|\b[Ww]ith??\b|\bacid\b|\band\b|\bby\b|\b[cC]DNA\b|\bcell\b|\b[Cc]loning\b|[Cc]omplex\b|\b[Cc]onserved\b|encod*\b|\b[Ee]xpressed\b|\b[Ff]amily\b|\bfrom\b|\b[Kk]inase?\b|\b[mM]olecular\b|\bnovel\b|\bof\b|\bon\b|\b[pP]rotein?\b|\breceptor\b|\bsequence\b|[Tt]hat\b|[Tt]o//g;
+
+from: TagWords.pm
+		#$self->{_geneAnnotation}->printPathways();
+
+		#	foreach my $symbol (sort keys %$ret_hash) 
+		#	{
+				#print STDERR "Symbol:$symbol\n"; 
+		#		foreach my $type (keys %{ $ret_hash->{$symbol} })
+		#		{ 
+		#			print STDERR "$symbol:$type:\n"; 
+		#			my ($data_array) = %$ret_hash->{$symbol}->{$type};
+		#			foreach (@$data_array) { print STDERR "$_,"; }
+		#			print STDERR "\n";
+		#		}
+		#	}
+
+			#print STDERR Dumper %$ret_hash;
+			#return $self->{_geneAnnotation}->getAnnotatedGeneWords();
+====
+			## Insert all the common words to the common_words table in the database
+			#	my $common_word_list;
+			#	foreach (keys %common_words_to_add ) { $common_word_list .= "('$_'),"; }
+			#	$common_words->add_common_word($common_word_list);
+====
+#	my $end = new Benchmark;
+#	my $diff = timediff($end, $start);
+#	print STDERR "Time taken was ", timestr($diff, 'all'), " seconds\n";
+
+from: GeneDbAnnotation
+## REFACTOR: Make sure that pathways from multiple 
+## databases can be selected at once
+sub getPathways
+{
+	my @pathways;
+	my $self = $_[0];
+	my $geneSymbol = $_[1];
+	my $query = "CALL getPathwayBySymbol(?)";
+	## Set to "none" by default
+	my $filter_pathway = "KEGG";
+	my $dbh = $self->{_dbh};
+	my $query_handle = $dbh->prepare($query);
+	$query_handle->execute($geneSymbol);
+	while (my @row = $query_handle->fetchrow_array) {
+		## $row[0] = pathway id
+		## $row[1] = pathway description
+		## $row[2] = gneomeID
+		## $row[3] = pathway origin (KEGG, Ingenuity, Wiki)
+		## Do the necessary filtering before adding to pathways
+		if ( $filter_pathway ne "none") 
+		{ if ($row[3] eq $filter_pathway) { push @pathways, "$row[0];$row[1];$row[3]"; }}
+
+#		else { push @pathways, "$geneSymbol;$row[0];$row[1];$row[3]"; } ## Add all pathways
+	}
+	return @pathways;
+}
+
+## Input: Gene Symbol
+## Output: All the synonyms for the gene
+## The synonyms list might be empty, if synonyms
+## do not exist
+sub getSynonyms
+{
+	my @synonyms;
+	my $self = $_[0];
+	my $geneSymbol = $_[1];
+	my $synonym_query = "CALL getSynonymsBySymbol(?)";
+	## Set to "none" by default
+	my $dbh = $self->{_dbh};
+	my $synonym_query_handle = $dbh->prepare($synonym_query);
+	$synonym_query_handle->execute($geneSymbol);
+	while (my @row = $synonym_query_handle->fetchrow_array) {
+		## $row[0] = synonym symbol
+		push @synonyms, "$row[0]";
+	}
+	return @synonyms;
+}
+
+sub getClinVarEventDetails
+{
+	my @events;
+	my $self = $_[0];
+	my $geneSymbol = $_[1];
+	my $variant_category = $_[2]; ##SNV, MNV, DIV
+	my $query = "CALL getCV_Event_DetailsBySymbol(?,?)";
+	## Set to "none" by default
+	my $dbh = $self->{_dbh};
+	my $query_handle = $dbh->prepare($query);
+	$query_handle->execute($geneSymbol, $variant_category);
+	while (my @row = $query_handle->fetchrow_array) {
+		## $row[0] = clnsig
+		## $row[1] = clnorigin
+		## $row[2] = nsf
+		## $row[3] = nsm
+		## $row[4] = nsn
+		## $row[5] = common
+		push @events, "$geneSymbol;$row[0];$row[1];$row[2];$row[3];$row[4];$row[5];";
+	}
+	return @events;
+}
+
+sub getClinVarVariants
+{
+	my @variants;
+	my $self = $_[0];
+	my $geneSymbol = $_[1];
+	my $query = "CALL getCV_VariantBySymbol(?)";
+	## Set to "none" by default
+	my $dbh = $self->{_dbh};
+	my $query_handle = $dbh->prepare($query);
+	$query_handle->execute($geneSymbol);
+	while (my @row = $query_handle->fetchrow_array) {
+		## $row[0] = rsID
+		## $row[1] = chrom
+		## $row[2] = rs position
+		push @variants, "$geneSymbol;$row[0];$row[1];$row[2]";
+	}
+	return @variants;
+}
+
+sub getKeggDiseases
+{
+	my @kegg_diseases;
+	my $self = $_[0];
+	my $geneSymbol = $_[1];
+	my $query = "CALL getKegg_DiseaseBySymbol(?)";
+	## Set to "none" by default
+	my $dbh = $self->{_dbh};
+	my $query_handle = $dbh->prepare($query);
+	$query_handle->execute($geneSymbol);
+	while (my @row = $query_handle->fetchrow_array) {
+		## $row[0] = name
+		## $row[1] = description
+		## $row[2] =  category
+		## $row[3] = envFactor
+		## $row[4] = comment
+		## $row[5] = kegg disease id
+		push @kegg_diseases, "$row[0];$row[1];$row[2]; $row[5]";
+	}
+	return @kegg_diseases;
+}
+
+sub getMedgenDiseases
+{
+	my @medgen_diseases;
+	my $self = $_[0];
+	my $geneSymbol = $_[1];
+	my $query = "CALL getMedgenDiseaseBySymbol(?)";
+	## Set to "none" by default
+	my $dbh = $self->{_dbh};
+	my $query_handle = $dbh->prepare($query);
+	$query_handle->execute($geneSymbol);
+	while (my @row = $query_handle->fetchrow_array) {
+		## $row[0] = medgenID
+		## $row[1] = diseaseName
+		## $row[2] =  diseaseMIM
+		## The medgen disease have duplicate entries from different sources
+		## To make them unique add to a hash instead of an array...
+		push @medgen_diseases, "$row[0];$row[1];$row[2]";
+	}
+	return @medgen_diseases;
+}
+## Input: A word
+
+parse_pdf.pm:
+## Experimental
+
+	#my $file = get $pdf_file or die "Can't open the text file : $!";
+	#my $pdf = CAM::PDF->new("$file"); 
+	#my $doc="";
+
+	#for (my $i=1; $i <= $pdf->numPages(); $i++) {$doc = $doc.$pdf->getPageText($i);}
+    #return $doc;
+	#return $pdf_file;
+#sub convert_pdf_to_text {
+ #   my $pdf_filename = 'nrd4326.pdf';
+  #  my $pdf          = CAM::PDF->new($pdf_filename);
+   # my $y            = $pdf->getPageContent(1);
+	
+#print STDERR "Text: $y \n";
+	#return CAM::PDF::PageText->render($y);
+	#my $doc="";
+    #for (my $i=1; $i <= $pdf->numPages(); $i++) {$doc = $doc.$pdf->getPageText($i);}
+    #return $pdf->numPages();
+	
+	#return CAM::PDF->asciify(\$y);
+	#return CAM::PDF::PageText->render($y);
+	#return "yyyyyy";
+#}

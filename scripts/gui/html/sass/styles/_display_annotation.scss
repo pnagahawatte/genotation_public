@@ -1,0 +1,147 @@
+
+
+html, body {
+    height: 100%;
+}
+
+// body.annotation-body {
+//     background: $primary-color;
+// }
+
+.document-wrapper {
+    height: auto;
+    top: $navbar-height;
+    width: 100%;
+}
+
+.documentContainer {
+    width: 100%;
+    height: auto;
+    position:absolute;
+    top: $navbar-height;
+    bottom: 0;
+}
+
+.navbar-toggle {
+    display: block !important;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-top: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.navbar-right {
+    margin-right: 10px;
+
+    a {
+        padding: 0 !important;
+    }
+}
+
+button.navbar-toggle {
+    border-radius: 3px;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    border-color: #fff;
+    background: #0470A5;
+}
+
+.navmenu-fixed-right {
+    top: $navbar-height;
+}
+
+.navmenu-fixed-right.offcanvas.in {
+    -webkit-transition: top .35s, left .35s, bottom .35s, right .35s;
+    transition: top .35s, left .35s, bottom .35s, right .35s;
+}
+
+.navmenu-fixed-right.offcanvas {
+    -webkit-transition: top .35s, left .35s, bottom .35s, right .35s;
+    transition: top .35s, left .35s, bottom .35s, right .35s;
+}
+
+#annotations-nav {
+    background: $primary-color;
+}
+
+
+.nav-tabs {
+    a {
+        color: #fff;
+    }
+    li:hover a {
+        color: #555555;
+    }
+}
+
+.primary-nav {
+    a {
+        color: #fff !important;
+        font-size: 1em;
+    }
+    color: #fff !important;
+    li {
+        :hover,:focus {
+            background:  darken($primary-color, 5%) !important;
+        }
+    }
+    :not(:last-child) {
+        border-bottom: 1px solid #cccccc;
+    }
+}
+
+.secondary-nav {
+    li {
+        a {
+            padding-left: 2.5em !important;
+            font-size: 0.95em;
+        }
+        :hover {
+            background: darken($primary-color, 10%) !important;
+        }
+        // background: darken($primary-color, 5%);
+    }
+}
+
+.tertiary-nav {
+    li {
+        a {
+            padding-left: 4em !important;
+            font-size: 0.9em;
+        }
+        :hover,:focus {
+            background: darken($primary-color, 15%) !important;
+        }
+        // background: darken($primary-color, 10%);
+    }
+}
+
+.quaternary-nav {
+    li {
+        a {
+            padding-left: 5.5em !important;
+            font-size: 0.85em;
+        }
+        :hover,:focus {
+            background: darken($primary-color, 20%) !important;
+        }
+        // background: darken($primary-color, 15%);
+    }
+}
+
+.no-highlight {
+    :hover,:focus {
+        background: none;
+    }
+}
+
+
+
+
+

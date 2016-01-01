@@ -1,0 +1,24 @@
+#$binary = utf8_decode($utf8);
+#file_put_contents('my.pdf', $binary);
+
+/* Main code starts from here */
+/* Read broken image as a binary string to further processing */
+#$broken = file_get_contents('my.pdf');
+ 
+/* Convert utf-8 with non-shortest codes to Unicode codepoints */
+//$aa = utf8ToUnicode($utf8);
+ 
+/* Going through codepoints, remap special codes and convert bytes to chars */
+/*$restored = '';
+foreach ($aa as $d) {
+    $ch = $d;
+    if (isset($r2[$d])) {
+        $ch = $r2[$d];
+    }
+    if ($ch > 255) {
+        echo 'Wrong char! ' . sprintf('%04X', $ch);
+    }
+    $restored .= chr($ch);
+}
+*/ 
+/* Put restored image to file */

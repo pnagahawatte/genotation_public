@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Annotate document</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+		<!-- <link rel="stylesheet" type="text/css" href="res/style.css"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="res/menuStyle.css"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="res/searchStyle.css"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="res/dropzone.css"> -->
+		<link rel="icon" href="res/favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="res/favicon.ico" type="image/x-icon"/>
+		<!-- <link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css"> -->
+		<!-- <link rel="stylesheet" type="text/css" media="all" href="res/dropzone.css" /> -->
+	</head>
+	<body>
+		<form action="redirect.pl" method="post">
+			<div class="row genotation-header">
+				<div class="col-sm-12 text-center">
+					<h1 class="page-title">Genotation</h1>
+					<h4 class="page-subtitle">Scientific articles automatically annotated with genetic information</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-offset-3 col-sm-6 form-group search-bar">
+					<div class="input-group">
+						<input type="text" class="form-control input-lg" name="terms" placeholder="Type search terms or copy and paste the article url here" id="txtSearchTerms" />
+						<span class="input-group-btn">
+							<input type="submit" name="btnSubmit" class="btn btn-info btn-lg" value="Search" />
+						</span>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			<div class="col-sm-offset-3 col-sm-6">
+				<hr class="search-divider" />
+			</div>
+		</div>
+		<div class="row pdf-div">
+			<div class="col-sm-offset-3 col-sm-6 text-center">
+				<form action="file-upload.php" class="dropzone dz-clickable" id="dropzone" >
+					<div class="dz-default dz-message">
+						<input type="Button" name="btnSubmit" class="fileDrag" value="Drop a PDF here to annotate..." />
+					</div>	
+				</form>
+				<input type="file" class="hide">
+				<button id="submit-file" class="hide btn btn-primary btn-lg annotate-btn">Annotate File</button>
+			</div>
+		</div>
+		<div id="ghelp">
+		  <a href="help.html">Help!</a>
+		</div>
+
+		<script type="text/javascript" src="JS/min/app-min.js"></script>
+		<!-- <script type="text/javascript" src="res/dropzone.js"></script> -->
+		<script type="text/javascript">
+		// http://stackoverflow.com/a/2548133
+		if (typeof String.prototype.endsWith !== 'function') {
+		    String.prototype.endsWith = function(suffix) {
+		        return this.indexOf(suffix, this.length - suffix.length) !== -1;
+		    };
+		}
+		$(document).ready(function () {
+		    Dropzone.options.dropzone = {
+				maxFiles: 1,
+				autoProcessQueue: false,
+				uploadMultiplle: false,
+				parallelUploads: 100,
+				init: function() {
+				var submitButton = document.querySelector("#submit-file"),
+					myDropzone = this; // closure
+
+					submitButton.addEventListener("click", function() {
+						//myDropzone.processQueue(); // Tell Dropzone to process all queued files.
+						//e.preventDefault();
+						//e.stopPropagation();
+						this.innerHTML = "Annotating...";
+						this.disabled = true;
+						myDropzone.processQueue();
+					});
+					this.on("addedfile", function() {
+				  // Show submit button here and/or inform user to click it.
+						document.getElementById("submit-file").className = "btn btn-primary btn-lg";
+					});
+					this.on("sending", function() {
+					  // Gets triggered when the form is actually being sent.
+					  // Hide the success button or the complete form.
+					});
+					this.on("success", function(file, response) {
+					  // Gets triggered when the files have successfully been sent.
+					  // Redirect user or notify of success.
+					  var path = "DisplayAnnotation.pl?fileurl=";
+					  var url = path.concat(file.name);
+					  window.location = url;
+					});
+					this.on("error", function(file, response) {
+					  // Gets triggered when there was an error sending the files.
+					  // Maybe show form again, and notify user of error
+					});
+				},
+				accept: function(file, done) {
+					console.log(file);
+					if (!file.name.endsWith('.pdf')) {
+					// if (file.type != "application/pdf") {
+						done("Error! Files of this type are not accepted");
+					}
+					else { done(); }
+				}
+			};
+		});
+		 </script>
+	</body>
+</html>

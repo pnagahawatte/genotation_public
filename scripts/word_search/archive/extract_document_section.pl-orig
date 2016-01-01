@@ -1,0 +1,190 @@
+#!/usr/bin/env perl
+
+use warnings;
+use strict;
+
+use Getopt::Long;
+use DB_File;
+use Benchmark;
+## Set up the database handle using the
+## db connect library
+use SQL::CONN::db_connect;
+
+my $start = new Benchmark;
+#@ISA = ('Exporter');
+#@EXPORT = ('db_connect');
+use word_search::word_index qw(generate get_word_hash print_text 
+	get_line print_word_index get_max_line set_doc_section get_doc_section 
+	get_included_section modify_text_annotation id_to_line_number print_doc_sections);
+use word_search::GeneWords;
+use word_search::WordContext;
+use gneome_db::db_file qw(add_word print_words word_exists);
+
+## Fields of a document
+## Each section that has been set to true will be excluded / filtered out
+## from the document text
+my ($abstract, $body, $references, $methods, $names, $in_reference_section) = (0,0,0,0,0,0);
+my $text;
+my $add_to_buffer = 0;
+my $filtered_sections = "";
+
+## Command line arguments
+my $help;
+## Print usage information
+if ( @ARGV < 2 or ! (GetOptions('help|?'=> \$help, 'names'=>\$names,
+		'references'=>\$references, 'text=s'=>\$text)) or defined $help )
+{
+	print "find_gene_words.pl [--threshold Longest word threshold]\n";
+	exit(-1);
+}
+
+my $start_read = new Benchmark;
+## Generate the hash and set a pointer to the reference
+my ($word_index) = generate($text);
+print get_line(100);
+## =============
+my $end_read = new Benchmark;
+my $diff_read = timediff($end_read, $start_read);
+print "Time taken to generate was ", timestr($diff_read, 'all'), " seconds";
+## ========
+exit;
+
+## Get the maximum number of lines in the document
+my ($document_lines) = get_max_line;
+my $line_count = 1;
+while( $line_count <= $document_lines)
+{
+	my ($text_line) = get_line("text", $line_count);
+	## Look at the user selection to decide which sections
+	## of the document should be included
+	## Looking for the first individual word on a single line
+	## At this point, the title and names sections have been passed
+	if($text_line =~ /^\S*\b$/)
+	{
+		## If the document transitions from an excluded section to 
+		## a to be included section, denote that in the document
+		## sections hash
+		if ($add_to_buffer == 0)
+		{
+			## E:E = Exclude:End
+			## I:S = Include:Start
+			set_doc_section($line_count-1 . ",E:E");
+			set_doc_section("$line_count,I:S");
+		}
+		## This text is needed to be parsed later on... 
+		## Start adding to buffer
+
+		$add_to_buffer = 1;
+	}
+	
+	## Look for sections after references, such as supplementary materials
+	#if ($add_to_buffer eq "0" and $references eq "1")
+	#{
+	#	my $reference_points = is_reference_line($text_line);
+	#	if ( $reference_points == 0 && $text_line !~ /^\s*$/ 
+	#		&& $in_reference_section == 1) 
+	#	{ 
+	#		$add_to_buffer = 1;
+			## If the document transitions from an excluded section to 
+			## a to be included section, denote that in the document
+			## sections hash
+	#		set_doc_section($line_count-1 . ",E:E");
+	#		set_doc_section("$line_count,I:S");
+	#	}
+	#}
+	
+	## If references are to be filtered, filter them out
+	if ( $references eq "1" and $text_line =~ /^references$/i )
+	{
+		$in_reference_section = 1;
+		set_doc_section($line_count-1 . ",I:E");
+		set_doc_section("$line_count,E:S");
+		$add_to_buffer = 0;
+	}
+	if ( $add_to_buffer eq "1" and defined $text_line)
+	{
+		$filtered_sections .= $text_line;
+	}
+	## Introduce a newline character and 
+	## increase the line count
+	$filtered_sections .= "\n";
+	$line_count++;
+}
+
+
+## Object to perform the gene word search
+my $geneWords = word_search::GeneWords->new();
+my $wordContext = word_search::WordContext->new($word_index);
+
+## Parse the document to find which 
+my ($incl_text) = get_included_section("id_text");
+foreach(@$incl_text)
+{
+	my @fields = split " ", $_;
+	my $search_word = $fields[1];
+	my $word_id = $fields[0];
+	## Make sure the word is nota  common word
+	if ( ! word_exists($search_word) )
+	{
+		if ($geneWords->tag($search_word, 10) eq "gene")
+		{ 
+			## Do some tests to avoid false positives
+			## Codon test - could the word be a codon that leads to 
+			## a gene name?
+			#if ($search_word =~ /([ACGTUacgtu][ACGTUacgtu][ACGTUacgtu])/ && length $word_id == 3)
+			$search_word =~ s/\s//g;
+			## START -- False positive removal
+			## A codon identified as a gene
+			if ($search_word =~ /([ACGTUacgtu][ACGTUacgtu][ACGTUacgtu])/)
+			{
+				## Only annotate the text as a gene if the word is not in a codon context
+				if($wordContext->isCodonContext($word_id) eq "false") { modify_text_annotation($word_id, 4, "g"); }
+			}
+			## Portion of a name identified as a gene
+			elsif(length $search_word < 3 )
+			{
+				## Only annotate the text as a gene if the word does not belong to a reference line
+				if(is_reference_line(id_to_line_number($word_id) == 0)) { modify_text_annotation($word_id, 4, "g"); }
+			}
+			## END -- False positive removal
+			else { modify_text_annotation($word_id, 4, "g"); }
+		}
+		elsif ($geneWords->tag($search_word, 10) eq "drug") { modify_text_annotation($word_id, 4, "d"); }
+		else { add_word($search_word); }
+	}
+}
+
+my $ret = get_included_section("details");
+#foreach( @$ret ) { print $_; }
+#print $filtered_sections;
+#$dbh->disconnect();
+
+## Input: A line of text
+## This subroutine tries to predict whether a line of text
+## belongs to the references section or not
+sub is_reference_line
+{
+	my ($line) = @_;
+	my @fields = split " ", $line;
+	my ($word_count, $comma_count, $enumerated, $has_year, $has_page_range) = (0,0,0,0,0);
+	foreach(@fields)
+	{
+		$word_count++;
+		if( $_ =~ /,/ ) { $comma_count++; }
+		## Is there a year in the line
+		if ( $_ =~ /([\(]?\d{4}[\)]?$)/ ) { $has_year = 1;}
+		## Is the line enumerated?
+		if ($_ =~ /(\d-\d)/ ) { $has_page_range = 1; }
+	}
+	
+	## make the decision
+	my $reference_points = 0;
+	if ( $word_count > 0 and ($comma_count/$word_count)*100 > 10) { $reference_points++; }
+	if ( $has_year eq "1" ) { $reference_points++; }
+	if ( $has_page_range eq "1" ) { $reference_points++; }
+	return "$reference_points";
+}
+
+my $end = new Benchmark;
+my $diff = timediff($end, $start);
+print "Time taken was ", timestr($diff, 'all'), " seconds";

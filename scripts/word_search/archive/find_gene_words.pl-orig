@@ -1,0 +1,101 @@
+#!/usr/bin/env perl
+
+package word_search::find_gene_words;
+use warnings;
+use strict;
+use 5.010000;
+=pod
+ =head1 Input:
+ 1. longest_word_threshold
+ 2. gene symbol list
+ STDIN will provide text in following format (tab seperated)
+ pubmed_id	abstract_text
+
+ =head1 The script attempts to filter out any words that are not gene names
+ Steps to do this:
+ 1. Filter out any words that are greater than the longest_word_trheshold
+ 2. Lookup the rest of the words against a gene symbol list
+
+ =head1 Output:
+ 1. pubmed_id
+ 2. comma separated list of gene names from the abstract
+=cut
+
+use Getopt::Long;
+
+## Set up the database handle using the
+## db connect library
+use lib "../../scripts/SQL/CONN/";
+use db_connect;
+my $dbh = db_connect();
+
+my $word_count=0;
+my ($LONGEST_WORD_THRESHOLD, $text);
+my %gene_list;
+my %found_gene_list;
+
+## Command line arguments
+my $help;
+## Print usage information
+if ( @ARGV < 2 or ! (GetOptions('help|?'=> \$help, 'threshold=s'=>\$LONGEST_WORD_THRESHOLD,
+		'text=s'=>\$text)) or defined $help )
+{
+	print "find_gene_words.pl [--threshold Longest word threshold]\n";
+	exit(-1);
+}
+
+## Prepare the array with all the gene symbol from the database
+my $gneome_id_query = "select symbol, gneomeID from genemain";
+my $gneome_id_query_handle = $dbh->prepare($gneome_id_query);
+$gneome_id_query_handle->execute();
+while (my @row = $gneome_id_query_handle->fetchrow_array) {
+	## gene_list{gneomeID} = symbol;
+	$gene_list{$row[0]} = $row[1];
+}
+
+#open( FILE, "< $text" ) or die "Can't open the text file : $!";
+while(<STDIN>)
+{
+	my @abstract_words = split /\s/,$_;
+	
+	foreach(@abstract_words)
+	{
+		if((length) <= $LONGEST_WORD_THRESHOLD && $_ ne "Notfound")
+		{
+#print "Original search word: $_\n";
+			## Remove all the full stops, as gene symbols could
+			## be followed by full stops, which would cause issues
+			## downstream
+			#s/\.//g;
+			s/([A-Z]*\.)*//ig;
+			s/[():,.;<>]//g;
+			## Remove any lone stansing numbers
+			s/^[0-9]*//g;
+			## Replace common occuring text to make the lookups more efficient
+			s/\bin\b|\b[aA]\b|\bis\b|\b[Tt]he\b|\b[Gg]ene?\b|\b[Hh]uman*\b|\bDNA\b|\bRNA\b|\bfor\b|isoform|\b[Ww]ith??\b|\bacid\b|\band\b|\bby\b|\b[cC]DNA\b|\bcell\b|\b[Cc]loning\b|[Cc]omplex\b|\b[Cc]onserved\b|encod*\b|\b[Ee]xpressed\b|\b[Ff]amily\b|\bfrom\b|\b[Kk]inase?\b|\b[mM]olecular\b|\bnovel\b|\bof\b|\bon\b|\b[pP]rotein?\b|\breceptor\b|\bsequence\b|[Tt]hat\b|[Tt]o//g;
+			## Only use the word, if it is not blank
+			my $search_word = $_;
+			
+			if((length $search_word) != 0 ) 
+			{
+				## Check whether the word is a gene:
+				## Compare it to the HUGO_gene_list array to find a match
+				if( exists $gene_list{$search_word})
+				{
+					##print $search_word . ":\t" . $gene_list{$search_word} . "\n";
+					## Add the gene information, so we can gather more details later
+#print "Found for search word: $search_word\n";					
+					$found_gene_list{$search_word} = $gene_list{$search_word};
+				}
+			}			
+		}
+	}	
+	#if( defined $gene_candidate_words) { print $pubmed_id . "\t" . $gene_candidate_words . "|\t" . $abstract_text . "\n"; }
+}
+
+## Gather further details about the genes found in the paper
+foreach(keys %found_gene_list)
+{
+	print "$_\t$found_gene_list{$_}\n";
+}
+$dbh->disconnect();

@@ -1,0 +1,285 @@
+body 
+{ 
+	height: 100%; 
+	width: 100%; 
+	padding: 0; 
+	margin: 0; 
+	background-color:white;
+}
+
+h1
+{
+	margin-bottom:0;
+	margin-top:0px;
+	font-family: 'Vollkorn', Georgia, Times, serif;
+    font-size: 70px;
+    line-height: 55px;
+	font-weight: 900px;
+	letter-spacing:-2px;
+}
+
+h2
+{
+	color:white;
+	font-family: 'Vollkorn', Georgia, Times, serif;
+	top:0px;
+}
+
+h3
+{
+	font-family: 'Vollkorn', Georgia, Times, serif;
+	font-size: 20px;
+	font-weight:100px;
+	color:#0089d0;
+}
+p 
+{
+	color:blue;
+}
+table,th,td 
+{ 
+	border:1px solid black;
+	border-collapse:collapse
+}
+#titleContainer
+{
+	/*background-color:rgba(179, 150, 37, 0.5);*/
+	background-color:#0089d0;
+	height:40px;
+	padding-top:0px;
+	margin-top:0px;
+	float:left;
+	width:20%;
+	z-index:1;
+}
+#menuContainer
+{
+	background-color:#0089d0;
+	/* previously used blue: #47a3da;*/
+	height:40px;
+	padding-top:0px;
+	margin-top:0px;
+	float:right;
+	width:100%;
+	/*text-align:right;*/
+}
+
+#detailsContainer
+{
+	width:315px;
+	height:100%;
+	/*float:right;*/
+	position:absolute;
+	right:0px;
+	margin-top:45px;
+	background-color:#0089d0;
+}
+
+#docFrame
+{
+	width:100%;
+	height:100%;
+	position:absolute;
+	overflow:hidden;
+}
+
+.documentContainer
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0px;
+	top:0px;
+	margin-top:40px;
+}
+
+.documentContainerCondensed
+{
+	position:absolute;
+	right:300px;
+	height:100%;
+	left:0px;
+	top:0px;
+	margin-top:40px;
+}
+
+.homeTitle
+{
+	
+}
+
+.homeAnchor
+{
+	text-decoration:none;
+	float:left;
+	top:0px;
+	vertical-align: text-top;
+	color:white;
+	font-family: 'Vollkorn', Georgia, Times, serif;
+	font-weight:900;
+	font-size:xx-large;
+}
+
+.inputBox
+{
+	border:2px solid #0089d0;
+	width:500px;
+	height:40px;
+	margin-top:140px;
+}
+
+.resultInputBox
+{
+	border:2px solid #0089d0;
+	width:500px;
+	height:40px;
+	margin-top:30px;
+	margin-left:50px;
+}
+
+.submitButton
+{
+	border:2px solid #47a3da;
+	width:100px;
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:20px;
+	color:white;
+	background-color:#0089d0;
+}
+
+.inputDiv
+{
+	margin-top:30px;
+	text-align:center;
+}
+
+.tabHeader
+{
+	display: inline;
+	border: solid;
+	border-width: 1px 1px 0 1px;
+	margin: 0 0.2em 0 0;
+	border-color: white;
+	border-width: 2px;
+		text-decoration:none;
+	color:white;
+	font-weight:strong;
+	padding:5px;
+
+}
+
+.tabHeader:hover
+{
+	border-color:#47a3da;
+	background-color:white;
+	color:#47a3da;
+}
+
+#tabHeaderLink
+{
+	text-decoration:none;
+	color:white;
+	font-weight:strong;
+	padding:5px;
+}
+
+#tabHeaderLink:hover
+{
+	color:#47a3da;
+}
+
+#tabUL
+{
+	list-style: none;
+	padding:0;
+	margin:0;
+	margin-top:5px;
+}
+
+.header-cont {
+width:100%;
+position:fixed;
+top:50px;
+}
+
+.header {
+height:50px;
+color:#0089d0;
+border:none;
+width:960px;
+margin:0px auto;
+text-align: center;
+}
+
+.result-box
+{
+	padding-top:50px;
+	padding-left:40px;
+}
+
+.fileDrag
+{
+	border:2px dashed #47a3da;
+	width:300px;
+	height:200px;
+	/*padding:5px;*/
+	/*margin-top:10px;*/
+	color:#0089d0;
+	font-weight:500px;
+}
+
+/*drop down menu for "i" button*/
+.circle
+{
+width:25px;
+height:25px;
+border-radius:25px;
+font-size:20px;
+line-height:25px;
+text-align:center;
+background:white;
+margin-top:0px;
+list-style: none;
+color:#0089d0;
+text-decoration:none;
+float:right;
+}
+
+
+
+.circle:hover div
+{
+display:block;
+}
+.menuDetail
+{
+background:white;
+display:none;
+width:200px;
+border-width:1px;
+border-color:gray;
+font-size:15px;
+float:left;
+text-align:left;
+z-index:1000;
+position:fixed;
+left:calc(100% - 150px);
+list-style:none;
+}
+
+.menuDetailInput
+{
+list-style:none;
+font-size:15px;
+float:left;
+z-index:1001;
+position:fixed;
+left:calc(100% - 140px);
+}
+
+.docFrame
+{
+width:100%;
+height:100%;
+}

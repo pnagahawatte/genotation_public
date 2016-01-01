@@ -1,0 +1,4 @@
+http://www.genenames.org/cgi-bin/statistics
+ftp://ftp.ebi.ac.uk/pub/databases/genenames/genefam_list.txt.gz
+ftp://ftp.ebi.ac.uk/pub/databases/genenames/hgnc_complete_set.txt.gz
+

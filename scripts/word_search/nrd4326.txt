@@ -1,0 +1,417 @@
+N E W S & A N A LY S I S
+FROM THE ANALYST’S COUCH
+
+The malignant
+melanoma landscape
+Rachel M. Webster and Samuel E. Mentzer
+
+Image from Nikola Spasenoski/Alamy
+
+In 2014 an estimated 112,200 patients will
+be diagnosed with malignant melanoma in
+the United States and five major European
+markets. More than 90% will be diagnosed
+early when the disease is resectable1.
+However, when discovered late, the prognosis
+is poor.
+
+malignant melanoma. Both drugs achieved
+statistically significant improvements in
+progression-free survival in Phase III
+studies. Trametinib had response rates
+of 22% compared with 52% for dabrafenib.
+A combination of dabrafenib and trametinib
+was granted accelerated approval by the
+US Food and Drug Administration (FDA)
+for unresectable or metastatic BRAFV600E
+or BRAFV600K malignant melanoma, based
+on Phase I/II trials. These findings were
+replicated in the Phase III COMBI-d trial,
+achieving a median progression-free survival
+of 9.3 months (compared with 8.8 months
+for dabrafenib monotherapy), and a 67%
+response rate. Moreover, the combination was
+associated with a reduction in the incidence
+of cutaneous hyperproliferative events (2%)
+compared with dabrafenib alone (9%).
+Although the combination of BRAF and
+MEK inhibitors prolongs response to therapy,
+acquired resistance is inevitable; and although
+immunotherapy offers the potential for
+durable responses, few patients will benefit.
+▶
+
+Current treatment options
+Prior to 2011, the mainstay of treatment
+for unresectable malignant melanoma was
+cytotoxic therapy, notably dacarbazine, which
+is characterized by low response rates (10%)
+and poor survival (12-month overall survival
+is 36%). In 2011, two important drugs were
+approved. Ipilimumab (Yervoy; Bristol-Myers
+Squibb), a first-in-class monoclonal antibody
+that targets cytotoxic T lymphocyte antigen 4
+(CTLA4) — a negative regulator of cytotoxic
+T cell activation — is associated with low
+response rates (11%), but responses are
+frequently durable, extending to several
+years. Vemurafenib, a small-molecule
+inhibitor (Zelboraf; Roche/Genentech/
+
+Daiichi Sankyo/Chugai) is another
+first-in-class drug that is marketed with a
+companion diagnostic (Cobas 4800 BRAF
+V600 Mutation Test; Roche). It targets
+the V600E mutation in the BRAF enzyme,
+which is found in 40–50% of patients.
+It shows a 3.9-month median overall survival
+benefit over dacarbazine. Although response
+rates to vemurafenib are high (57%) and
+rapid, resistance to treatment usually develops
+within 6 months. Ipilimumab is currently
+used to treat up to 30% of BRAFV600E-positive
+patients with low tumour burden, owing to
+the potential for durable responses1.
+In May 2013, two additional
+targeted therapies, dabrafenib (Tafinlar;
+GlaxoSmithKline) and trametinib
+(Mekinist; GlaxoSmithKline), as well as the
+ThxID-BRAF (BioMérieux) companion
+diagnostic test, were approved. Dabrafenib
+also inhibits BRAFV600E, whereas trametinib
+is a first-to-market MAPK/ERK (MEK)
+inhibitor that is approved for use in BRAFV600E
+and the less common BRAFV600K-mutated
+
+Table 1 | Select therapies in Phase III development for malignant melanoma
+Products
+
+Developers
+
+Target or mechanism
+
+Notes on trials
+
+BRAF–MEK–ERK pathway inhibitors
+Dabrafenib (Tafinlar),
+trametinib (Mekinist)
+
+GlaxoSmithKline
+
+BRAF or MEK
+
+Tested as adjuvant combination treatment for BRAFV600E
+or BRAFV600K malignant melanoma
+
+Cobimetinib
+
+Roche/Genentech/
+Exelixis
+
+MEK
+
+Tested in combination with vemurafenib in BRAFV600E
+or BRAFV600K malignant melanoma
+
+Encorafenib (LGX818)
+
+Novartis
+
+BRAF
+
+Tested alone or in combination with binimetinib in
+BRAFV600E or BRAFV600K malignant melanoma
+
+Binimetinib (MEK162)
+
+Novartis/Array
+
+MEK
+
+Tested in NRAS-mutated melanoma and in combination
+with encorafenib in BRAFV600E or BRAFV600K malignant
+melanoma
+
+Nivolumab
+
+Bristol-Myers Squibb
+
+PD1
+
+Tested alone or in combination with ipilimumab in
+treatment-naive patients with malignant melanoma and
+in patients who have progressed on prior ipilimumab
+
+Pembrolizumab (MK‑3475)
+
+Merck & Co.
+
+PD1
+
+Tested as single-agent in ipilimumab-naive patients with
+malignant melanoma
+
+Viral vector vaccine
+
+Tested in unresectable stage IIIb/IIIc or IV malignant
+melanoma
+
+Immune checkpoint inhibitors
+
+Other immunotherapies and therapeutic vaccines
+Talimogene
+laherparepvec (T‑Vec)
+
+Amgen
+
+ERK, extracellular signal-regulated kinase; MEK, MAPK/ERK kinase; PD1, programmed cell death protein 1.
+
+NATURE REVIEWS | DRUG DISCOVERY	
+
+VOLUME 13 | JULY 2014 | 491
+© 2014 Macmillan Publishers Limited. All rights reserved
+
+N E W S & A N A LY S I S
+FROM THE ANALYST’S COUCH
+▶ Late-stage drug pipeline
+
+Several BRAF and MEK inhibitors are in
+late-stage clinical development1,2 (TABLE 1).
+The MEK inhibitor cobimetinib (Roche/
+Genentech/Exelixis) is being evaluated
+in a Phase III study in combination
+with vemurafenib. In a Phase Ib study,
+cobimetinib/vemurafenib achieved a
+response rate of 87% in BRAF-inhibitor-naive
+patients. The MEK inhibitor binimetinib
+(MEK162; Novartis/Array) has potential for
+the treatment of NRAS-mutated malignant
+melanoma (accounting for approximately
+15–25% of patients), but response rates are
+low (20% in both NRAS- and BRAF-mutated
+patients). Binimetinib is also being
+evaluated in a three-armed Phase III study
+in combination with the BRAF inhibitor
+encorafenib (LGX818; Novartis) versus
+encorafenib and vemurafenib monotherapies.
+Programmed cell death protein 1
+(PD1)-directed monoclonal antibodies,
+a novel class of immune checkpoint inhibitors,
+are also in Phase III clinical development.
+In December 2013, nivolumab (Bristol-Myers
+Squibb/Ono) was filed for regulatory approval
+in Japan based on Phase II data; this is the first
+global filing of an anti-PD1 agent. Nivolumab
+is in three Phase III studies in the United States
+and Europe. Phase Ib data for nivolumab are
+remarkable, with high response rates (41%)
+and durable responses (median overall survival
+is 20 months). Nivolumab combined with
+ipilimumab achieved an even higher response
+rate (53%). Responses were also rapid and
+durable (82% of responses were ongoing at
+analysis), with an unprecedented median
+
+overall survival of 40 months. However, the
+higher incidence of adverse events and the
+likely high cost that the immunotherapy
+combination will command could constrain
+its uptake. Pembrolizumab (MK‑3475;
+Merck), another anti-PD1 therapy, is also
+in Phase III development. It was awarded
+FDA breakthrough designation and has
+been undergoing a rolling review for patients
+with unresectable or metastatic malignant
+melanoma who have previously received
+ipilimumab. It remains to be determined
+which PD1-directed therapy will demonstrate
+the highest and most durable response rates1,2.
+Other immunotherapeutic approaches
+are also being explored. The oncolytic
+immunotherapy talimogene laherparepvec
+(T‑Vec; Amgen) is a modified version of
+herpes simplex virus type 1 (HSV1) that is
+modified to selectively replicate in tumour
+cells and activate a systemic immune response.
+In a Phase III study it achieved a durable
+response rate of 16% compared with 2% for
+patients treated with granulocyte–macrophage
+colony-stimulating factor (GM-CSF).
+However, its median overall survival was
+not met with statistical significance (23.3
+months versus 18.9 months with GM-CSF).
+Interestingly, talimogene laherparepvec
+is being evaluated in combination with
+ipilimumab in a Phase I/II study. Preliminary
+data show that the combination achieved
+an overall response rate of 41%, with an
+impressive complete response rate of 24%.
+Ipilimumab is also being tested as adjuvant
+treatment after resection of stage III melanoma.
+Initial results reported from a Phase III trial
+
+2,000
+1,800
+
+Sales (US$ millions)
+
+1,600
+1,400
+1,200
+1,000
+800
+600
+400
+200
+0
+
+10
+173
+157
+577
+
+2013
+
+10
+177
+
+10
+183
+224
+
+10
+197
+
+12
+202
+265
+
+629
+
+2014
+
+2015
+
+274
+
+274
+
+13
+198
+278
+
+241
+
+191
+767
+
+12
+203
+
+13
+207
+
+853
+
+2016
+
+959
+
+2017
+
+Cytotoxic agents
+Cytokines and viral vector vaccines
+
+1,029
+
+2018
+
+1,157
+
+2019
+
+1,238
+
+2020
+
+BRAF and MEK inhibitors
+Immune checkpoint inhibitors
+
+Figure 1 | US sales of therapies for malignant melanoma, by drug class (estimated). 
+MEK, MAPK/ERK kinase. 
+
+Nature Reviews | Drug Discovery
+
+492 | JULY 2014 | VOLUME 13	
+
+show a recurrence-free survival of 26.1 months
+(compared with 17.1 months for placebo).
+However, the frequency of grade 3/4 immunerelated adverse events was high with ipilimumab
+(42%) and there were treatment-related
+deaths (1.1%). The rate of discontinuation
+owing to adverse events was also higher with
+ipilimumab (48.8%) than with placebo (1.7%).
+Market indicators
+In 2013, ipilimumab and vemurafenib
+achieved US sales of $577 million and
+$127 million, respecively. Dabrafenib and
+trametinib achieved early strong uptake
+in the United States (US$30 million).
+Ipilimumab has had a considerable impact
+on the malignant melanoma market, and
+in 2013 it accounted for nearly two-thirds
+of total malignant melanoma therapy
+US sales1 (FIG. 1). Additional immune
+checkpoint inhibitors, namely nivolumab
+and pembrolizumab, are expected to enter
+the malignant melanoma market before the
+end of 2014. These agents will compete with
+ipilimumab, driving a growth in sales of the
+immune checkpoint inhibitor drug class.
+Vemurafenib dominated BRAF and MEK
+inhibitor sales in 2013, but despite nearly half
+of malignant melanoma tumours harbouring
+BRAF mutations, this drug class contributed
+just one-fifth of total US sales in this year1.
+We anticipate that the BRAFV600-mutated
+segment will become more competitive as
+several large companies vie to secure maximum
+market share for their products. Considering
+that the immune checkpoint inhibitors can be
+used to treat patients regardless of mutational
+status and have the potential to induce rapid
+and durable responses and considerably
+prolong survival, BRAF and MEK inhibitors
+910
+1,010
+1,180
+1,300
+1,440
+may be relegated to the smaller, and thus less
+lucrative, later-stage disease settings. We also
+expect that later-to-market BRAF plus MEK
+combination therapies will face challenges in
+gaining traction in what will be a crowded and
+competitive market.
+1.	 Decision Resources Group. Malignant Melanoma
+(Pharmacor; 2013–2014).
+2.	 Decision Resources Group. Immunotherapies
+(Pharmacor; 2014).
+
+Rachel M. Webster and Samuel E. Mentzer
+are at 6th Floor Aldermary House,
+10–15 Queen Street, London EC4N 1TX, UK.
+Correspondence to R.M.W.
+e‑mail: rwebster@dresourcesgroup.com
+doi:10.1038/nrd4326
+Corrected online 4 July 2014
+Competing interests statement
+
+The authors declare no competing interests.
+
+www.nature.com/reviews/drugdisc
+© 2014 Macmillan Publishers Limited. All rights reserved
+
+4,
+
+
